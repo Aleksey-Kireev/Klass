@@ -26,10 +26,10 @@ public class Object {
         }
 //        Создание авторов
 
-        Author author_1 = new Author("Лев Николаевич Толстой");
-        Author author_2 = new Author("Александр Сергеевич Пушкин");
-        Author author_3 = new Author(nameAuthor[0]);
-        Author author_4 = new Author(nameAuthor[1]);
+        Author author_1 = new Author("Лев", "Толстой");
+        Author author_2 = new Author("Александр", "Пушкин");
+        Author author_3 = new Author(nameAuthor[0], "Defoult");
+        Author author_4 = new Author(nameAuthor[1], "Defoult");
 
 //          Создание книг
         Book book_1 = new Book(author_1.getAuthor(), "Война и Мир", 1726);
@@ -48,7 +48,7 @@ public class Object {
         System.out.printf("\n4. Книга %s, автор %s, изд. %d года. ", book_4.getBook(), author_4.getAuthor(),
                 book_4.getYear());
 
-//                Запрос на изменение года изания книги
+//                Запрос на изменение года издания книги
 
         System.out.print("\n У какой книги поменять год издания? - ");
         int num = inNum.nextInt();

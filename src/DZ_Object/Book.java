@@ -1,15 +1,17 @@
 package DZ_Object;
 
 public class Book {
+    private String author;
     private String book;
     private int year;
 
-    public Book(String nameAuthor, String book, int year){
-        if (nameAuthor.isEmpty()) {
+    public Book(String author, String book, int year){
+        if (author.isEmpty()) {
             System.out.println("Такую книгу нельзя создать");
             String[] args = {};
             DZ_Object.Object.main(args);
         } else {
+            this.author = author;
             this.book = book;
             this.year = year;
 
