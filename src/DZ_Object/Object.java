@@ -26,32 +26,29 @@ public class Object {
         }
 //        Создание авторов
 
-        Author author_1 = new Author("Лев", "Толстой");
-        Author author_2 = new Author("Александр", "Пушкин");
-        Author author_3 = new Author(nameAuthor[0], "");        // Пока сделано так без разделения имени и фамилии
-        Author author_4 = new Author(nameAuthor[1], "");        // потом можно сделать разбивку и передавать их двумя
+        Author author1 = new Author("Лев", "Толстой");
+        Author author2 = new Author("Александр", "Пушкин");
+        Author author3 = new Author(nameAuthor[0], "");        // Пока сделано так без разделения имени и фамилии
+        Author author4 = new Author(nameAuthor[1], "");        // потом можно сделать разбивку и передавать их двумя
                                                                 // полями
 
 //          Создание книг
-        Book book_1 = new Book(author_1.getAuthor(), "Война и Мир", 1726);
-        Book book_2 = new Book(author_2.getAuthor(), "Евгений Онегин", 1832);
-        Book book_3 = new Book(author_3.getAuthor(), nameBook[0], year[0]);
-        Book book_4 = new Book(author_4.getAuthor(), nameBook[1], year[1]);
+        Book book1 = new Book(author1, "Война и Мир", 1726);
+        Book book2 = new Book(author2, "Евгений Онегин", 1832);
+        Book book3 = new Book(author3, nameBook[0], year[0]);
+        Book book4 = new Book(author4, nameBook[1], year[1]);
 
 //        Распечатка полного списка книг
-
-        System.out.printf("\n1. Книга %s, автор %s, изд. %d года. ", book_1.getBook(), author_1.getAuthor(),
-                book_1.getYear());
-        System.out.printf("\n2. Книга %s, автор %s, изд. %d года. ", book_2.getBook(), author_2.getAuthor(),
-                book_2.getYear());
-        System.out.printf("\n3. Книга %s, автор %s, изд. %d года. ", book_3.getBook(), author_3.getAuthor(),
-                book_3.getYear());
-        System.out.printf("\n4. Книга %s, автор %s, изд. %d года. ", book_4.getBook(), author_4.getAuthor(),
-                book_4.getYear());
+        // Через переопределенный метод toString
+        System.out.println("%n Распечатка полного списка книг");
+        System.out.printf("%n1. %s", book1);
+        System.out.printf("%n2. %s", book2);
+        System.out.printf("%n3. %s", book3);
+        System.out.printf("%n4. %s", book4);
 
 //                Запрос на изменение года издания книги
 
-        System.out.print("\n У какой книги поменять год издания? - ");
+        System.out.printf("%n У какой книги поменять год издания? - ");
         int num = inNum.nextInt();
         System.out.print("Введите правильный год: ");
         i = inNum.nextInt();
@@ -60,28 +57,24 @@ public class Object {
 
         switch (num) {
             case 1 -> {
-                book_1.setYear(i);
+                book1.setYear(i);
                 System.out.printf("В книге %s год издания исправлен. ", num);
-                System.out.printf("\n1. Книга %s, автор %s, изд. %d года. ", book_1.getBook(), author_1.getAuthor(),
-                        book_1.getYear());
+                System.out.printf("%n1. %s", book1);
             }
             case 2 -> {
-                book_2.setYear(i);
+                book2.setYear(i);
                 System.out.printf("В книге %s год издания исправлен. ", num);
-                System.out.printf("\n1. Книга %s, автор %s, изд. %d года. ", book_2.getBook(), author_2.getAuthor(),
-                        book_2.getYear());
+                System.out.printf("%n2. %s", book2);
             }
             case 3 -> {
-                book_3.setYear(i);
+                book3.setYear(i);
                 System.out.printf("В книге %s год издания исправлен. ", num);
-                System.out.printf("\n3. Книга %s, автор %s, изд. %d года. ", book_3.getBook(), author_3.getAuthor(),
-                        book_3.getYear());
+                System.out.printf("%n3. %s", book3);
             }
             case 4 -> {
-                book_4.setYear(i);
+                book4.setYear(i);
                 System.out.printf("В книге %s год издания исправлен. ", num);
-                System.out.printf("\n4. Книга %s, автор %s, изд. %d года. ", book_4.getBook(), author_4.getAuthor(),
-                        book_4.getYear());
+                System.out.printf("%n4. %s", book4);
             }
             default -> throw new IllegalStateException("Такой книги нет: " + num);
         }
