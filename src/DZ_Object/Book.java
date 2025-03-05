@@ -6,7 +6,7 @@ public class Book {
     private int year;
 
     public Book(String author, String book, int year){
-        if (author.isEmpty()) {
+        if (author.isEmpty() || book.isEmpty() || year <= 0) {
             System.out.println("Такую книгу нельзя создать");
             String[] args = {};
             DZ_Object.Object.main(args);

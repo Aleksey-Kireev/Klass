@@ -28,8 +28,9 @@ public class Object {
 
         Author author_1 = new Author("Лев", "Толстой");
         Author author_2 = new Author("Александр", "Пушкин");
-        Author author_3 = new Author(nameAuthor[0], "Defoult");
-        Author author_4 = new Author(nameAuthor[1], "Defoult");
+        Author author_3 = new Author(nameAuthor[0], "");        // Пока сделано так без разделения имени и фамилии
+        Author author_4 = new Author(nameAuthor[1], "");        // потом можно сделать разбивку и передавать их двумя
+                                                                // полями
 
 //          Создание книг
         Book book_1 = new Book(author_1.getAuthor(), "Война и Мир", 1726);
